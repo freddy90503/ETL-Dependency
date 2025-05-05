@@ -1,0 +1,83 @@
+ETL,Input,Output
+00-daily,db_sqs.fibersqs_featuresv1,db_fiber_ad.fiber_ad_main
+00-dailyRun,alarms-ams.tier2/p1,db_alarms.allalarms
+00-ETL_T2_p1,alarms-ams.tier1,alarms-ams.tier2/p1
+00-ETL_T2_p2,alarms-ams.tier1,alarms-ams.tier2/p2
+BusyHour-Tier6-2023-PRD_UC,db_edw.tbl_edw_usi_clli,db_busyhour.tbl_tier6_clli_busyhour
+BusyHour-Tier6-2023-PRD_UC,db_edw.tbl_edw_usi_clli_copper,data.tier6/project_busyhour/pon_busy_hour_columns_test2
+cad-prediction,db_cad.tbl_tier3_cad,db_cad.copper_anomalies
+cad-tier2-etl_UC,db_cpe.tbl_tier2_eco_elementtsdata,db_cad.tbl_tier2_cad
+cad-tier3-etl_UC,db_cad.tbl_tier2_cad,db_cad.tbl_tier3_cad
+clusterWarehouseCost_Job_Scheduler,system.compute.clusters,db_cost_tracking.clusters_cost
+clusterWarehouseCost_Job_Scheduler,system.billing.usage,db_cost_tracking.warehouses_cost
+csqs-etl-tier1,db_cad.tbl_tier3_cad,db_sqs.coppersqs
+data_pipelineETL_run-UC,light_levels_dashboard.lightlevel_complete_usi,db_sqs.fibersqs_featuresv1
+eco_t1tot2_dailyparams,eco.data.tier1/dailyparams,db_cpe.tbl_tier2_eco_dailyparams
+eco_t2tot3_dailyparams,db_cpe.tbl_tier2_eco_dailyparams,db_cpe.tbl_tier3_eco_dailyparams
+eco_t1tot2_hosttable_data, eco.data.tier1/host-table-data,db_cpe.tbl_tier2_eco_hosttable
+eco_t2tot3_hosttable_data,db_cpe.tbl_tier2_eco_hosttable,db_cpe.tbl_tier3_eco_dailyparams
+eco_t1tot2_elementevents_data,eco.data.tier1/element-event,db_cpe.tbl_tier2_eco_elementevent
+eco_t1tot2_element_ts_data,eco.data.tier1/element-ts-data,db_cpe.tbl_tier2_eco_elementtsdata
+eco_t2tot3_element_ts_data,eco.data.tier1,eco.data.tier3/project_customerclassification/elements-ts-data/staging02/__staging02_elements_ts_data_summary
+eco_t2tot3_element_ts_data,eco.data.tier2,db_cpe.tbl_tier3_elementtsdata
+busyhour_t4,db_cpe.tbl_tier3_elementtsdata,db_busyhour.tbl_tier4_clli_busyhour
+busyhour_t4,db_edw.tbl_edw_usi_clli_copper,data.tier4/project_busyhour/clli_busy_15min
+busyhour_t4,db_edw.tbl_edw_usi_clli,db_busyhour.tbl_tier4_clli_busyhour_15min_rg_ids
+busyhour_t5,db_edw.tbl_edw_usi_clli,data.tier5-ts-data/staging02/project_busyhour/tier5_busyhour_elementtsdata
+eero_data_download_t1_t2,https://api-user.e2ro.com/2.2/organizations/self/data_aggregation_jobs,ftrml-developers.db_eero
+Eero_device_data_t2_t3_ETL,ftrml-developers.db_eero,db_eero.tbl_tier3_client_connection
+Eero_network_data_t2_t3_ETL,ftrml-developers.db_eero,db_eero.tbl_tier3_eero_network
+etl-tier2-light-level-complete_UC,pon.light.level.data.tier1/data,light_levels_dashboard.lightlevel_complete
+light-level-complete-add-usi,light_levels_dashboard.lightlevel_complete,light_levels_dashboard.lightlevel_complete_usi
+monthly_scorecard_status,`it-shared`.scorecard.saafactfeaturemonthlysnapv,`ftrml-nana`.db_scorecard.customers_monthly_status
+NewCustomerSQSPerformanceScheduler,db_sqs.fibersqsv1,db_new_customers_sqs_performance.new_customers_sqs_performance_data
+nmars_tier1_to_tier2_etl,nmars.data.tier2/ponutildump,db_ponutilization.tbl_tier2_nmars_ponutilization
+nmars_tier2_to_tier3_etl,db_ponutilization.tbl_tier2_nmars_ponutilization,db_ponutilization.tbl_tier3_nmars_ponutilization
+NOAA_daily_download,https://noaa-ghcn-pds.s3.amazonaws.com/ghcnd-stations.txt,db_weather.noaa_weather
+PBICusCountDataScheduler,db_edw.tbl_pon_type,db_cus_count.pon_mbym
+POCDataScheduler,db_busyhour.tbl_tier6_clli_busyhour,db_sqs_poc.sqs_poc_data
+t2_start_stop_processing,radius.data.tier1/start_stop_sessions,db_radius.t2_stop_session
+t3_start_stop_processing,db_radius.t2_stop_session,db_radius.t3_stop_session
+scorecard_daily_status,`it-shared`.scorecard.saafactfeaturedailyactv,ftrml-nana.db_scorecard.customers_account_status
+Prioritization_ETL_run,db_sqs.fibersqsv1,db_prioritization.historical_7days_fsqs
+priorotized_list_ETL_run,db_prioritization.historical_7days_fsqs,db_sqs.fsqs_service_priorities
+sqs_pipelineETL_run_UC,db_sqs.fibersqs_featuresv1,db_sqs.fibersqsv1
+SQSAnalysisScheduler,db_sqs.fibersqsv1,db_sqsanalysis.fibersqsanalysis
+Tier-4-radius-product-speed-etl_UC,radius.data.tier3/daily_usage,db_radius_daily_usage.daily_usag
+trouble_tickets_tier3_etl_UC,db_trouble_tickets.t2_tickets_reported,db_trouble_tickets.t3_trouble_tickets
+tso_tier1_to_tier2_etl,tso.data.tier1/lnd_pega_table_dailydata,db_tso_calls.tbl_tsocalls_tier2
+tso_tier2_to_tier3_etl,db_tso_calls.tbl_tsocalls_tier2,db_tso_calls.tbl_tsocalls_tier3
+tso_tier3_to_tier4_etl,db_tso_calls.tbl_tsocalls_tier3,db_tso_calls.tbl_tsocalls_tier4
+update_ouis,https://maclookup.app/downloads/csv-database/,default.oui_to_vendor
+Wifi_24_Hour_Tier2_ETL_UC,db_cpe.tbl_tier2_eco_elementtsdata,db_wifi.wifi_24_hour
+wifiSQS_ETLrun_24Hours,db_busyhour.tbl_tier6_clli_busyhour,db_sqs.wifisqs_96bins
+wifiSQS_ETLrun_7_11pm,db_sqs.wifisqs_96bins,db_private_wifidev.wifisqs_7_11pm
+wifiSQS_ETLrun_v3,db_private_wifidev.wifisqs_7_11pm,db_sqs.wifisqs_v1
+churn-pipeline-technical-deactivations,"secret_name = ""prod/edw""",db_churn.technical_deactivations
+DataPipeline_CSV_DynamoDB_Final3,ftrml-nana-dev/eero_csv_final,ftrml-nana-dev/eero_csv_final/
+DataPipeline_CSV_DynamoDB_Final3,db_sqs.fibersqsv1,eero_csv_daily_dynamodb_final
+DataPipeline_deltaLake ,ftrml-nana.db_empower.6months,ftrml-nana.db_empower.6months
+ETL-edw-triad-usi-cill-daily-extract-uc,"the following Teradata views in the stg_triad_vw schema: SUBSCRIBERS_VW, SUBS_LOCATIONS_VW, LOCATIONS_VW, DEVICES_VW, DEVSTATES_VW, DEVTYPES_VW, DEVMODELS_VW",edw.triad.data.tier1/usi_to_clli_mapping
+ETL-edw-triad-usi-clli-copper-daily-extract-uc,"stg_triad_vw.subs_phones_vw
+stg_triad_vw.subscribers_vw
+stg_triad_vw.subs_services_vw
+stg_triad_vw.services_vw
+stg_triad_vw.servclass_vw
+stg_triad_vw.subs_locations_vw
+stg_triad_vw.locations_vw
+stg_triad_vw.devices_vw
+stg_triad_vw.udfield_val_vw",edw.triad.data.tier1/usi_to_clli_copper_mapping
+ETL-onprem-ont-light-levels,"SFTP Server: 10.243.34.38
+P1 Directory: opt/fiber_ftp_files/NokiaOntLight/p1
+P2 Directory: opt/fiber_ftp_files/NokiaOntLight/p2",pon.light.level.data.tier2/raw_data
+ETL-radius-daily-usage_prd,"This ETL connects to a MySQL-based RADIUS database, and reads records from the daily_usage table for a specific date.",radius.data.tier3/daily_usage
+etl_eco_t0tot1_uc,"This ETL generates SQS messages to upload ECO JSON files from an on-premises SFTP server to Tier-1 S3. Source server: eco-json-data-aws.sys.frontiernet.net, login via secret prd/ecojsonserver (username: ftr.ml, basedir: eco-json). Files are listed using SSH (paramiko), filtered for types like dailyparams, element-ts-data, etc. High-priority files are sent to a high-priority SQS queue, others to a low-priority queue. Final destination is a Tier-1 S3 bucket defined in config (t1s3bucket). Upload status is tracked via Delta Lake.",eco.data.tier1
+ETL_edw_usi_to_copper_upgrade,edw_vwmc.FullOutputCopperUpgrade,db_edw.tbl_fulloutputcopperupgrade
+ETL_edw_usi_to_fiber_upgrade,edw_vwmc.FullOutputFiberUpgrade,db_edw.tbl_fulloutputfiberupgrade
+ETL_edw_usi_to_pon_type_UC,DW_ENDUSER_VW.DPI_F1F2_Pair,db_edw.tbl_pon_type
+ETL_onprem_trouble_tickets_UC,"edw_vwmc.trouble_tickets_v, stg_dpi_vw.cssrvusi, stg_dpi_vw.csact",db_trouble_tickets.t2_tickets_reported
+Pulling_CLLI11_SID_UC,"STG_TRIAD_VW.dslamnode_vw, STG_TRIAD_VW.ftthnode_vw",db_edw_triad.tid_sid_weeklyupdated
+Pulling_lndPega_oracle_UC,Oracle source table: lnd_pega.fcsinteractioncases,tso.data.tier1/lnd_pega_table_dailydata
+Radius_stops_data_tier1,"an on-prem server, server's information exist in ""radius-daily/dataproc_updated2024"" secret in the aws secret manager",radius.data.tier1/start_stop_sessions
+NMARS_pon_utilization_data_tier1,"a rest api : ""http://nmars.corp.pvt/scripts/api/ponutil.php?type=csv&network=dailypon""",nmars.data.tier2/ponutildump
+alarm tier1,"on-prem server, push model. data being sent to our aws sftp server: s-656560eda6e449bc9",alarms-ams.tier1
