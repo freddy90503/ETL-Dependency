@@ -1,11 +1,10 @@
 
 import streamlit as st
+from PIL import Image
 
 st.set_page_config(layout="wide")
-st.title("ETL Dependency Chain Viewer (Fully Connected)")
-st.write("Hover over any ETL job to see inputs/outputs. Click to focus and explore.")
+st.title("ETL Dependency Chain (Final Accurate Version)")
+st.write("This static graph shows the complete dependency map using all 156 ETL rows. Zoom with your browser to view details.")
 
-with open("etl_static_net.html", "r", encoding="utf-8") as f:
-    html_content = f.read()
-
-st.components.v1.html(html_content, height=900, scrolling=True)
+image = Image.open("etl_dependency_graph_complete.png")
+st.image(image, use_column_width=True)
