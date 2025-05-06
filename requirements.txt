@@ -1,5 +1,0 @@
-streamlit
-pyvis
-networkx
-pandas
-pillow
